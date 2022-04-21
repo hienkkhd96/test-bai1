@@ -10,8 +10,8 @@ const rateWin = function (total) {
   // Khởi tạo lần tung mỗi lượt chơi
   let count = 0;
   let totalPlay = 0;
-  //   Vì mỗi lần chơi ta được tung 100 lần lên số lần tung xúc sắc sẽ là bội của 100
-  for (let i = 1; i <= total * 100; i++) {
+  //   Số lần tung xúc xắc
+  for (let i = 1; i <= total ; i++) {
     count += 1;
     //  Lấy ngẫu nhiên số điểm của xúc sắc
     let score = Math.floor(Math.random() * 6) + 1;
