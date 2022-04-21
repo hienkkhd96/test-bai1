@@ -14,7 +14,7 @@ const rateWin = function (total) {
   for (let i = 1; i <= total * 100; i++) {
     count += 1;
     //  Lấy ngẫu nhiên số điểm của xúc sắc
-    let score = Math.random() * 6;
+    let score = Math.floor(Math.random() * 6) + 1;
     // Khi rơi vào trường hợp 0.1% phải đi lại từ tầng 0
     if (Math.random() * 100 <= 0.1) {
       floor = 0;
@@ -33,7 +33,7 @@ const rateWin = function (total) {
     }
     // Khi rơi vào trường hợp tung được 6 điểm
     else if (score <= 6) {
-      floor = floor + Math.ceil(Math.random() * 6);
+      floor = floor + Math.floor(Math.random() * 6) + 1;
     }
     // Tại vì mỗi lượt chơi chỉ được gieo 100 lần=> Khi gieo hết 100 lần mà không win thì reset và tính thêm 1 lượt chơi
     if (count >= 100 && floor < 60) {
