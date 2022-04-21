@@ -52,7 +52,6 @@ const rateWin = function (total) {
   //   Kết quả là số lần Win chia số lần chơi nhân 100
   //   Kết quả có đơn vị là phần trăm
   result = (countWin / totalPlay) * 100;
-  console.log(totalPlay / total);
   return result;
 };
 
