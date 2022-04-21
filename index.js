@@ -41,7 +41,7 @@ const rateWin = function (total) {
       floor = 0;
       count = 0;
     }
-    //  Nếu số tằng lớn hơn hoặc bằng 100 thì sẽ là 1 lần win,tính thêm 1 lượt và reset số tầng , số lượt tung còn lại về 0
+    //  Nếu số tằng lớn hơn hoặc bằng 60 thì sẽ là 1 lần win,tính thêm 1 lượt và reset số tầng , số lượt tung còn lại về 0
     if (count <= 100 && floor >= 60) {
       totalPlay += 1;
       countWin = countWin + 1;
