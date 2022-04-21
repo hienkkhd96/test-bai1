@@ -7,8 +7,6 @@ const rateWin = function (total) {
   let countWin = 0;
   //   Khởi tạo biến số tầng đi được
   let floor = 0;
-  //   Khởi tạo số lượt tung xúc sắc trong 1 lần chơi
-  let count = 0;
   //   Vì mỗi lần chơi ta được tung 100 lần lên số lần tung xúc sắc sẽ là bội của 100
   for (let i = 1; i <= total * 100; i++) {
     //  Lấy ngẫu nhiên số điểm của xúc sắc
