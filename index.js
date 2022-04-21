@@ -51,4 +51,5 @@ const rateWin = function (total) {
   return result;
 };
 
-console.log(rateWin(100000));
+console.log(rateWin(1000000));
+// Tỉ lệ win khoảng 8.4%(Chơi càng nhiều càng chính xác)
