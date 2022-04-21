@@ -15,7 +15,7 @@ const rateWin = function (total) {
     //  Lấy ngẫu nhiên số điểm của xúc sắc
     let score = Math.random() * 6;
     // Tại vì mỗi lượt chơi chỉ được gieo 100 lần=> Khi gieo hết 100 lần mà không win thì reset
-    if (count >= 100 && floor < 100) {
+    if (count > 100 && floor < 100) {
       floor = 0;
       count = 0;
     }
