@@ -16,7 +16,7 @@ const rateWin = function (total) {
     //  Lấy ngẫu nhiên số điểm của xúc sắc
     let score = Math.floor(Math.random() * 6) + 1;
     // Khi rơi vào trường hợp 0.1% phải đi lại từ tầng 0
-    if (Math.random() * 100 <= 0.1) {
+    if (Math.floor(Math.random() * 1000) + 1 == 1) {
       floor = 0;
     }
     //  Khi rơi vào trường hợp lùi 1 tầng
