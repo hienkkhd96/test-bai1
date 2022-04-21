@@ -7,11 +7,18 @@ const rateWin = function (total) {
   let countWin = 0;
   //   Khởi tạo biến số tầng đi được
   let floor = 0;
+  // Khởi tạo lần tung mỗi lượt chơi
+  let count = 0;
   //   Vì mỗi lần chơi ta được tung 100 lần lên số lần tung xúc sắc sẽ là bội của 100
   for (let i = 1; i <= total * 100; i++) {
+    count += 1;
     //  Lấy ngẫu nhiên số điểm của xúc sắc
     let score = Math.random() * 6;
-
+    // Tại vì mỗi lượt chơi chỉ được gieo 100 lần=> Khi gieo hết 100 lần mà không win thì reset
+    if (count >= 100 && floor < 100) {
+      floor = 0;
+      count = 0;
+    }
     //  Nếu số tằng lớn hơn hoặc bằng 100 thì sẽ là 1 lần win
     if (floor >= 100) {
       countWin = countWin + 1;
@@ -45,4 +52,3 @@ const rateWin = function (total) {
 };
 
 console.log(rateWin(100000));
-// Kết quả sấp xỉ 70.2%(Chơi càng nhiều lượt kết quả càng chính xác)
