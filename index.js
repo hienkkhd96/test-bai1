@@ -15,19 +15,6 @@ const rateWin = function (total) {
     count += 1;
     //  Lấy ngẫu nhiên số điểm của xúc sắc
     let score = Math.random() * 6;
-    // Tại vì mỗi lượt chơi chỉ được gieo 100 lần=> Khi gieo hết 100 lần mà không win thì reset và tính thêm 1 lượt chơi
-    if (count > 100 && floor < 100) {
-      totalPlay += 1;
-      floor = 0;
-      count = 0;
-    }
-    //  Nếu số tằng lớn hơn hoặc bằng 100 thì sẽ là 1 lần win,tính thêm 1 lượt và reset số tầng , số lượt tung còn lại về 0
-    if (floor >= 100 && count <= 100) {
-      totalPlay += 1;
-      countWin = countWin + 1;
-      count = 0;
-      floor = 0;
-    }
     // Khi rơi vào trường hợp 0.1% phải đi lại từ tầng 0
     if (Math.random() * 100 <= 0.1) {
       floor = 0;
@@ -48,11 +35,24 @@ const rateWin = function (total) {
     else if (score <= 6) {
       floor = floor + Math.ceil(Math.random() * 6);
     }
+    // Tại vì mỗi lượt chơi chỉ được gieo 100 lần=> Khi gieo hết 100 lần mà không win thì reset và tính thêm 1 lượt chơi
+    if (count >= 100 && floor < 100) {
+      totalPlay += 1;
+      floor = 0;
+      count = 0;
+    }
+    //  Nếu số tằng lớn hơn hoặc bằng 100 thì sẽ là 1 lần win,tính thêm 1 lượt và reset số tầng , số lượt tung còn lại về 0
+    if (count <= 100 && floor >= 100) {
+      totalPlay += 1;
+      countWin = countWin + 1;
+      count = 0;
+      floor = 0;
+    }
   }
   //   Kết quả là số lần Win chia số lần chơi nhân 100
   //   Kết quả có đơn vị là phần trăm
   result = (countWin / totalPlay) * 100;
-  console.log(total);
+  console.log(totalPlay / total);
   return result;
 };
 
