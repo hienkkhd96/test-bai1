@@ -22,7 +22,7 @@ const rateWin = function (total) {
       count = 0;
     }
     //  Nếu số tằng lớn hơn hoặc bằng 100 thì sẽ là 1 lần win,tính thêm 1 lượt và reset số tầng , số lượt tung còn lại về 0
-    if (floor >= 100) {
+    if (floor >= 100 && count <= 100) {
       totalPlay += 1;
       countWin = countWin + 1;
       count = 0;
@@ -52,9 +52,9 @@ const rateWin = function (total) {
   //   Kết quả là số lần Win chia số lần chơi nhân 100
   //   Kết quả có đơn vị là phần trăm
   result = (countWin / totalPlay) * 100;
-  console.log(totalPlay);
+  console.log(total);
   return result;
 };
 
-console.log(rateWin(10000));
-// Tỉ lệ win khoảng 8.5%(Chơi càng nhiều càng chính xác)
+console.log(rateWin(100));
+// Tỉ lệ win khoảng 7.83%(Chơi càng nhiều càng chính xác)
