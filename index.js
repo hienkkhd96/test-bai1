@@ -18,7 +18,7 @@ const rateWin = function (total) {
       floor = 0;
     }
     // Khi rơi vào trường hợp 0.1% phải đi lại từ tầng 0
-    if (score <= (6 * 0.1) / 100) {
+    if (Math.random() * 100 <= 0.1) {
       floor = 0;
     }
     //  Khi rơi vào trường hợp lùi 1 tầng
@@ -44,5 +44,5 @@ const rateWin = function (total) {
   return result;
 };
 
-console.log(rateWin(1000));
-// Kết quả sấp xỉ 70.3%(Chơi càng nhiều lượt kết quả càng chính xác)
+console.log(rateWin(100000));
+// Kết quả sấp xỉ 70.2%(Chơi càng nhiều lượt kết quả càng chính xác)
